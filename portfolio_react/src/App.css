@@ -36,3 +36,273 @@
     transform: rotate(360deg);
   }
 }
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background: #f8f8f8;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+#intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+  background: #fff;
+}
+
+.intro-content {
+   margin-left: 120px;
+}
+
+.intro-content h1 {
+  font-size: 2.5em;
+}
+
+.intro-content h1 span {
+  color: #007bff;
+}
+
+.intro-content .buttons {
+  margin-top: 20px;
+}
+
+.intro-content .buttons a {
+  text-decoration: none;
+  color: white;
+  text-wrap: nowrap; /*짱신기*/
+  width: 120px;
+  background: #333;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.intro-content .buttons a:hover {
+  background: #007bff;
+}
+
+.intro-image{
+  margin-right: 120px;
+}
+
+.intro-image img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+
+#about {
+  text-align: left;
+  padding: 60px; /* 섹션 전체에 패딩 추가 */
+  background: #E6EEFF; /* 배경색 설정 */
+  border-top: 2px solid #ddd;
+}
+
+#about h1 {
+  margin-top: 50px; /* h1의 상단에 마진 추가 */
+  margin-bottom: 50px; /* h1의 하단에 마진 추가 */
+  margin-left: 120px; /* h1의 왼쪽 마진 추가 */
+}
+
+#about p {
+  font-size: 1.2em;
+  margin: 20px 0; /* 단락 간의 마진 추가 */
+  margin-left: 120px; /* 단락 왼쪽 마진 추가 */
+}
+
+
+#skills {
+  text-align: center;
+  padding: 50px 20px;
+  background: #ffffff;
+}
+
+#skills h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.skills-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skills-icons img {
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+#projects {
+  padding: 50px 20px;
+  background: #F4F4F4;
+}
+
+#projects h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #E6EEFF;
+  border-radius: 10px;
+}
+
+.project-details {
+  max-width: 40%;
+}
+
+.project-details h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.project-details a {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #007bff;
+  margin-top: 10px;
+}
+
+.project-images {
+  display: flex;
+  gap: 10px;
+}
+
+.project-images img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+#recommendations {
+  padding: 50px 20px;
+  background: #fafafa;
+  
+}
+
+#recommendations h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.recommendations-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.recommendation {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1;
+  max-width: 30%;
+  box-sizing: border-box;
+}
+
+.recommendation b {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#contact {
+  background: #E6EEFF; /* 배경색 설정 */
+  padding: 60px; /* 섹션 전체에 패딩 추가 */
+  text-align: left; }
+
+#contact h1 {
+  margin-top: 50px; /* h1의 상단에 마진 추가 */
+  margin-bottom: 50px; /* h1의 하단에 마진 추가 */
+  margin-left: 120px;
+}
+
+
+#footer {
+  background: #fafafa;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  margin: 0 10px;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+}
+
+.social-links button {
+  padding: 10px 20px;
+  background: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-left: 10px; /* 아이콘과 버튼 사이의 간격 */
+}
+
+.social-links button:hover {
+  background: #0056b3;
+}
+
+.footer-content p {
+  margin-top: 20px;
+}
+
+
+#home {
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
