@@ -1,5 +1,4 @@
 import React from "react";
-import turtle from "../img/washingturtle.png"; //의문 이게 왜 됨??
 
 export default function Project() {
   return (
@@ -12,9 +11,18 @@ export default function Project() {
         <a href="#">깃허브링크</a>
       </div>
       <div className="project-images">
-        <img src={turtle} alt="turtles" />
-        <img src={turtle} alt="turtles" />
-        <img src={turtle} alt="turtles" />
+        <img
+          src={`${process.env.PUBLIC_URL}/img/washingturtle.png`}
+          alt="turtles"
+        />
+        <img
+          src={`${process.env.PUBLIC_URL}/img/washingturtle.png`}
+          alt="turtles"
+        />
+        <img
+          src={`${process.env.PUBLIC_URL}/img/washingturtle.png`}
+          alt="turtles"
+        />
       </div>
     </div>
   );
