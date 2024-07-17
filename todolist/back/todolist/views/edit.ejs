@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>수정 Edit Page</title>
+</head>
+
+<body>
+  <h1>Edit Page</h1>
+  <hr />
+  <form method="post">
+    <fieldset>
+      <legend>Edit Data</legend>
+      <table>
+        <tr>
+          <td><label>Id</label></td>
+          <td><input type="text" name="id" value="<%= data.id %>" disabled /></td>
+        </tr>
+        <tr>
+          <td><label>Name</label></td>
+          <td><input type="text" name="contents" value="<%= data.contents %>" /></td>
+        </tr>
+        <tr>
+          <td><label>완료처리(yes)</label></td>
+          <td><input type="text" name="yesno" value="<%= data.yesno %>" /></td>
+        </tr>
+      </table>
+      <input type="submit" />
+    </fieldset>
+  </form>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>수정 Edit Page</title>
+</head>
+
+<body>
+  <h1>Edit Page</h1>
+  <hr />
+  <form method="post">
+    <fieldset>
+      <legend>Edit Data</legend>
+      <table>
+        <tr>
+          <td><label>Id</label></td>
+          <td> ~~~~~~ </td>
+        </tr>
+        <tr>
+          <td><label>Name</label></td>
+          <td> ~~~~~~~~ </td>
+        </tr>
+        <tr>
+          <td><label>완료처리(yes)</label></td>
+          <td> ~~~~~~~~ </td>
+        </tr>
+      </table>
+      <input type="submit" />
+    </fieldset>
+  </form>
+</body>
+
+</html> -->
