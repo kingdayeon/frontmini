@@ -8,7 +8,7 @@ export default function MyCalendar() {
 
   return (
     <div className="calendar-container">
-      <Calendar onChange={onChange} value={value} calendarType="islamic" />
+      <Calendar onChange={onChange} value={value} />
     </div>
   );
 }
