@@ -1,0 +1,182 @@
+.blog-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* 콘텐츠를 위로 정렬 */
+  min-height: 100vh;
+  background-color: #e0f7fa;
+  padding-top: 80px; /* 헤더의 높이 + 추가 여백 */
+}
+
+.header {
+  position: fixed; /* 화면 상단에 고정 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #81c784;
+  text-align: center;
+  padding: 20px 20px; /* 헤더의 세로 길이 */
+  color: white;
+  border-radius: 0 0 10px 10px; /* 하단 모서리만 둥글게 처리 */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* 다른 요소들 위에 위치하게 함 */
+}
+
+.header h1 {
+  font-size: 24px; /* 제목 폰트 크기 조정 */
+  margin: 0;
+}
+
+.post {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0; /* 포스트와 포스트 사이 여백 추가 */
+  width: 80%;
+}
+
+.post h4 {
+  margin: 0;
+  color: #66bb6a;
+  cursor: pointer;
+}
+
+.post h4 span {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.post p {
+  color: #66bb6a;
+  font-size: 14px;
+}
+
+.post button {
+  background-color: #aed581;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.post button:hover {
+  background-color: #81c784;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  gap: 20px; /* input과 button 사이의 간격 */
+}
+
+.input-container input {
+  width: calc(100% - 120px); /* 버튼의 너비와 간격을 고려하여 조정 */
+  padding: 12px;
+  border: 2px solid #a5d6a7;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.input-container input:focus {
+  border-color: #81c784;
+  outline: none;
+}
+
+.input-container button {
+  width: 100px; /* 버튼의 가로 길이 */
+  padding: 12px;
+  background-color: #aed581;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.input-container button:hover {
+  background-color: #81c784;
+}
+
+/* 모달 스타일 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 배경 색상 반투명 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* 모달이 다른 요소 위에 있도록 설정 */
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.modal-content input {
+  width: calc(100% - 24px);
+  padding: 10px;
+  border: 2px solid #a5d6a7;
+  border-radius: 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.modal-content button {
+  padding: 10px;
+  background-color: #aed581;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.modal-content button:hover {
+  background-color: #81c784;
+}
+
+/* Floating Button 스타일 */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px; /* 버튼 크기 */
+  height: 60px; /* 버튼 크기 */
+  background-color: #81c784; /* 버튼 색상 */
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-size: 24px; /* 아이콘 크기 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* 다른 요소들 위에 위치하게 함 */
+}
+
+.floating-button:hover {
+  background-color: #66bb6a; /* 버튼 색상 변경 (hover 시) */
+}
+
+.floating-button img {
+  width: 40px; /* 이미지 크기 */
+  height: 40px; /* 이미지 크기 */
+}

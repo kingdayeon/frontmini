@@ -1,0 +1,117 @@
+/* 모달 스타일 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Less intense background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px; /* Rounder corners for a cute look */
+  position: relative;
+  max-width: 500px; /* Slightly increased width */
+  width: 90%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for emphasis */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px; /* Larger close button */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px; /* Larger font size */
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+.close-button:hover {
+  background: #e64a49; /* Darker on hover */
+}
+
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.react-calendar {
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 12px; /* Rounder corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for emphasis */
+}
+
+.react-calendar__tile {
+  max-width: initial !important;
+  padding: 12px; /* Increased padding for better visual balance */
+  background: #ffffff !important; /* White background */
+  border-radius: 8px; /* Rounder corners */
+  color: #333 !important; /* Dark text color */
+  /* Increased width to prevent text from getting cut off */
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px; /* Larger font size */
+  line-height: 1.2; /* Adjust line height for better readability */
+}
+
+.react-calendar__tile--now {
+  background: #e0f7fa; /* Light cyan for today's date */
+  color: #00796b; /* Dark cyan text for today's date */
+  font-weight: bold;
+}
+
+.react-calendar__tile--active {
+  background: #f0f4c3; /* Light yellow-green for active dates */
+  color: #33691e; /* Dark green text for active dates */
+}
+
+.react-calendar__tile--neighboringMonth {
+  background: #f5f5f5 !important; /* Light gray for days from the previous or next month */
+  color: #b0b0b0 !important; /* Gray text for these days */
+}
+
+.react-calendar__tile:hover {
+  background: #d3fbac !important; /* Light green on hover */
+  border-radius: 8px; /* Match the rounded corners */
+}
+
+.react-calendar__navigation button {
+  color: #4caf50; /* Dark green for navigation buttons */
+  font-size: 16px; /* Larger font size */
+}
+
+.react-calendar__navigation button:disabled {
+  background-color: #f0f0f0; /* Light grey for disabled buttons */
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #e36e66 !important; /* Red color for weekends */
+  font-weight: bold; /* Bold text for better visibility */
+}
+
+/* 요일 헤더 스타일 */
+.react-calendar__month-view__weekdays__weekday {
+  color: #4caf50; /* Dark green color for weekday headers */
+  font-size: 18px; /* Larger font size for better readability */
+  text-transform: uppercase; /* Uppercase for better visual appeal */
+  padding: 6px; /* Padding for spacing */
+}
