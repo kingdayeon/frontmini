@@ -1,36 +1,36 @@
-// src/pages/Login.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Login.css"; // 로그인 페이지의 스타일이 필요하면 추가
+import "./Register.css"; // 회원가입 페이지의 스타일이 필요하면 추가
 
-function Login() {
+function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/login", {
+      await axios.post("http://localhost:5000/register", {
         username,
         password,
+        email,
       });
-      navigate("/BlogMain");
+      alert("회원가입 성공! 로그인 페이지로 이동합니다.");
+      navigate("/login"); // 로그인 경로로 수정
     } catch (error) {
-      console.error("로그인 실패:", error);
-      alert("로그인 실패: " + error.response.data.message);
+      console.error("회원가입 실패:", error);
+      alert(
+        "회원가입 실패: " + (error.response?.data?.message || error.message)
+      );
     }
   };
 
   return (
-    <div className="login-container">
-      <h2>
-        <img className="clover" alt="클로버" src="img/clover.png" />
-        ⊂ト욘쨩의 블로ュ나 øłnㅓ오ŀ (۶•̀ᴗ•́)۶
-        <img className="clover" alt="클로버" src="img/clover.png" />
-      </h2>
+    <div className="register-container">
+      <h2>회원가입</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username</label>
@@ -50,13 +50,19 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Login</button>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <button type="submit">Register</button>
       </form>
-      <span className="register" onClick={() => navigate("/register")}>
-        회원가입
-      </span>
     </div>
   );
 }
 
-export default Login;
+export default Register;

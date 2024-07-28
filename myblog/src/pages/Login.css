@@ -46,6 +46,7 @@
 }
 
 .login-container form button {
+  width: 100%; /* 버튼의 가로 길이를 폼의 가로 길이에 맞춤 */
   padding: 12px;
   background-color: #aed581;
   color: white;
@@ -53,13 +54,20 @@
   border-radius: 15px;
   cursor: pointer;
   font-size: 16px;
+  margin-top: 10px; /* 로그인 버튼과 회원가입 버튼 사이의 간격 */
 }
 
-.login-container form button:hover {
+.login-container form button:hover{
   background-color: #81c784;
 }
 
 .clover {
   width: 50px;
   height: auto;
+}
+
+.register{
+  color: #289b2e;
+  font-size: 16px;
+  margin-top: 12px;
 }

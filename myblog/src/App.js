@@ -1,8 +1,8 @@
-/* eslint-disable */
 import "./App.css";
 import { Routes, Route, BrowserRouter, useNavigate } from "react-router-dom";
 import BlogMain from "./pages/BlogMain";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   const navigate = useNavigate();
@@ -19,8 +19,10 @@ function MainApp() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} /> {/* 로그인 경로 추가 */}
         <Route path="/BlogMain" element={<BlogMain />} />
         <Route path="/home" element={<App />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
