@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./BlogMain.css";
 import CalendarModal from "./CalendarModal"; // 캘린더 모달 컴포넌트 가져오기
+import EditModal from "./EditModal";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 const getCurrentDateTime = () => {
   let now = new Date();
@@ -28,11 +31,12 @@ function BlogMain() {
       date: getCurrentDateTime(),
     },
   ]);
-  const [modal, setModal] = useState(false);
+  const [editModal, setModal] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false); // 캘린더 모달 상태
   const [title, setTitle] = useState(0);
   const [입력값, 입력값변경] = useState("");
   const [editingTitle, setEditingTitle] = useState("");
+  const [calendarValue, setCalendarValue] = useState(new Date()); // 캘린더 선택 날짜 상태
 
   const handleFloatingButtonClick = () => {
     setCalendarOpen(true); // 캘린더 모달 열기
@@ -60,17 +64,6 @@ function BlogMain() {
             }}
           >
             {a.title}
-            {/* <span
-              onClick={(e) => {
-                e.stopPropagation();
-                let copy = [...글제목];
-                copy[i].likes += 1;
-                글제목변경(copy);
-              }}
-            >
-              👍
-            </span>
-            {a.likes} */}
           </h4>
           <p>{a.date} 등록</p>
           <button
@@ -112,8 +105,8 @@ function BlogMain() {
         </button>
       </div>
 
-      {modal && (
-        <Modal
+      {editModal && (
+        <EditModal // 여기서 수정창 모달의 props를 전달해주는거 (하단에서 씀)
           color={"#a5d6a7"}
           title={title}
           글제목={글제목}
@@ -129,27 +122,11 @@ function BlogMain() {
       </button>
 
       <CalendarModal
-        isOpen={calendarOpen}
+        isOpen={calendarOpen} // props 전송
         onClose={() => setCalendarOpen(false)}
+        value={calendarValue} // 캘린더 선택 날짜 상태 전송
+        onChange={setCalendarValue} // 날짜 변경 시 상태 업데이트 함수 전송
       />
-    </div>
-  );
-}
-
-function Modal(props) {
-  return (
-    <div className="modal-overlay">
-      <div className="modal-content" style={{ background: props.color }}>
-        <h4>내용 바꿀래!</h4>
-        <input
-          type="text"
-          value={props.editingTitle}
-          onChange={(e) => props.setEditingTitle(e.target.value)}
-          placeholder="새 내용 입력"
-        />
-        <button onClick={props.handleSaveClick}>저장</button>
-        <button onClick={() => props.setModal(false)}>취소</button>
-      </div>
     </div>
   );
 }
