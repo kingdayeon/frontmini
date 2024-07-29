@@ -28,7 +28,7 @@ function Login() {
     <div className="login-container">
       <h2>
         <img className="clover" alt="클로버" src="img/clover.png" />
-        ⊂ト욘쨩의 블로ュ나 øłnㅓ오ŀ (۶•̀ᴗ•́)۶
+        ⊂ト욘쨩의 블로ュ에 øłnㅓ오ŀ (۶•̀ᴗ•́)۶
         <img className="clover" alt="클로버" src="img/clover.png" />
       </h2>
       <form onSubmit={handleSubmit}>
