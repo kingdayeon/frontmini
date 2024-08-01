@@ -1,27 +1,30 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Register.css"; // 회원가입 페이지의 스타일이 필요하면 추가
+import "./Register.css";
 
 function Register() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const navigate = useNavigate();
+  const [username, setUsername] = useState(""); // username 상태를 관리
+  const [password, setPassword] = useState(""); // password 상태를 관리
+  const [email, setEmail] = useState(""); // email 상태를 관리
+  const navigate = useNavigate(); // 페이지 이동을 위한 navigate 함수 사용
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // 기본 폼 제출 동작을 막음
 
     try {
+      // axios를 사용하여 회원가입 요청을 서버로 보냄
       await axios.post("http://localhost:5000/register", {
         username,
         password,
         email,
       });
+      // 회원가입 성공 시 성공 메시지를 alert로 표시하고 로그인 페이지로 이동
       alert("회원가입 성공! 로그인 페이지로 이동합니다.");
-      navigate("/login"); // 로그인 경로로 수정
+      navigate("/login"); // 로그인 경로로 이동
     } catch (error) {
       console.error("회원가입 실패:", error);
+      // 회원가입 실패 시 에러 메시지를 alert로 표시
       alert(
         "회원가입 실패: " + (error.response?.data?.message || error.message)
       );

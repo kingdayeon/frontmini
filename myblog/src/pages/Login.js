@@ -5,21 +5,24 @@ import axios from "axios";
 import "./Login.css"; // 로그인 페이지의 스타일이 필요하면 추가
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const [username, setUsername] = useState(""); // username 상태를 관리
+  const [password, setPassword] = useState(""); // password 상태를 관리
+  const navigate = useNavigate(); // 페이지 이동을 위한 navigate 함수 사용
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // 기본 폼 제출 동작을 막음
 
     try {
+      // axios를 사용하여 로그인 요청을 서버로 보냄
       await axios.post("http://localhost:5000/login", {
         username,
         password,
       });
+      // 로그인 성공 시 BlogMain 페이지로 이동
       navigate("/BlogMain");
     } catch (error) {
       console.error("로그인 실패:", error);
+      // 로그인 실패 시 에러 메시지를 alert로 표시
       alert("로그인 실패: " + error.response.data.message);
     }
   };
